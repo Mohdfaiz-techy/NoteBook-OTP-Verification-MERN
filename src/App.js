@@ -27,17 +27,42 @@ function App() {
   };
 
   return (
-    <NoteState> {/* Wrapping the application in the NoteState provider */}
-      <Router> {/* Wrapping the application in the Router for routing */}
+    <NoteState>
+      {" "}
+      {/* Wrapping the application in the NoteState provider */}
+      <Router>
+        {" "}
+        {/* Wrapping the application in the Router for routing */}
         <Navbar /> {/* Rendering the Navbar component */}
-        <Alert alert={alert} /> {/* Rendering the Alert component and passing the alert state */}
-        <div className="container my-3"> {/* Container for the main content with some margin */}
-          <Routes> {/* Defining the routes for the application */}
-            <Route path="/About" element={<About />}></Route> {/* Route for the About component */}
-            <Route path="/Home" element={<Home showAlert={showAlert}/>}></Route> {/* Route for the Home component with showAlert prop */}
-            <Route path="/Login" element={<Login showAlert={showAlert} />}></Route> {/* Route for the Login component with showAlert prop */}
-            <Route path="/SignUp" element={<SignUp showAlert={showAlert} />}></Route> {/* Route for the SignUp component with showAlert prop */}
-            <Route path="/otp" element={<OTPVerification showAlert={showAlert} />}></Route> {/* Route for the OTPVerification component with showAlert prop */}
+        <Alert alert={alert} />{" "}
+        {/* Rendering the Alert component and passing the alert state */}
+        <div className="container my-3">
+          {" "}
+          {/* Container for the main content with some margin */}
+          <Routes>
+            {" "}
+            {/* Defining the routes for the application */}
+            {/* <Route path="/About" element={<About />}></Route> Route for the About component */}
+            <Route
+              path="/Home"
+              element={<Home showAlert={showAlert} />}
+            ></Route>{" "}
+            {/* Route for the Home component with showAlert prop */}
+            <Route
+              path="/Login"
+              element={<Login showAlert={showAlert} />}
+            ></Route>{" "}
+            {/* Route for the Login component with showAlert prop */}
+            <Route
+              path="/SignUp"
+              element={<SignUp showAlert={showAlert} />}
+            ></Route>{" "}
+            {/* Route for the SignUp component with showAlert prop */}
+            <Route
+              path="/otp"
+              element={<OTPVerification showAlert={showAlert} />}
+            ></Route>{" "}
+            {/* Route for the OTPVerification component with showAlert prop */}
           </Routes>
         </div>
       </Router>

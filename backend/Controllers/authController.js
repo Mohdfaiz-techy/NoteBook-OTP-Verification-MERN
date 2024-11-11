@@ -46,7 +46,7 @@ const sendOTPForUserVerification = async (user) => {
     // Define the email options
     const mailOptions = {
       from: `"YourNoteBook" ${process.env.user_Email}`, // sender address
-      to: "mohdfaiz000007@gmail.com", // list of receivers
+      to: `${user.email}`, // list of receivers
       subject: "Verification For E-mail", // Subject line
       html: `<p>Copy your OTP: <b>${otp}</b> for E-mail verification</p>`, // HTML body content
     };

@@ -66,7 +66,7 @@ const SignUpForOTP = (props) => {
             className="form-control"
             id="email"
             name="email"
-            value={credentials.email} // Binds the email input to the state
+            value={credentials.email} // Binds the email input to the state            
             onChange={onChange} // Calls the onChange function on input change
           />
           <div id="emailHelp" className="form-text">

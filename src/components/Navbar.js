@@ -12,9 +12,9 @@ const Navbar = () => {
 
   // Function to handle logout
   const onClick = () => {
-    localStorage.removeItem('token'); // Remove the token from local storage
+    localStorage.removeItem("token"); // Remove the token from local storage
     navigate("/Login"); // Navigate to the login page
-  }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -37,7 +37,9 @@ const Navbar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link
-                className={`nav-Link  text-decoration-none mx-2 ${location.pathname === "/" ? "active" : ""}`}
+                className={`nav-Link  text-decoration-none mx-2 ${
+                  location.pathname === "/" ? "active" : ""
+                }`}
                 aria-current="page"
                 to="/Home"
               >
@@ -45,23 +47,34 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
+              {/* <Link
                 className={`nav-Link text-decoration-none mx-2  ${location.pathname === "/" ? "active" : ""}`}
                 aria-current="page"
                 to="/About"
               >
                 About Us
-              </Link>
+              </Link> */}
             </li>
           </ul>
           {/* Conditional rendering based on token presence in local storage */}
-          {!localStorage.getItem('token') ? (
+          {!localStorage.getItem("token") ? (
             <form className="d-flex" role="search">
-              <Link className="btn btn-primary mx-1" to="/Login" role="button">Login</Link>
-              <Link className="btn btn-primary mx-1" to="/SignUp" role="button">SignUp</Link>
+              <Link className="btn btn-primary mx-1" to="/Login" role="button">
+                Login
+              </Link>
+              <Link className="btn btn-primary mx-1" to="/SignUp" role="button">
+                SignUp
+              </Link>
             </form>
           ) : (
-            <Link className="btn btn-primary mx-1" onClick={onClick} to="/Login" role="button">Logout</Link>
+            <Link
+              className="btn btn-primary mx-1"
+              onClick={onClick}
+              to="/Login"
+              role="button"
+            >
+              Logout
+            </Link>
           )}
         </div>
       </div>

@@ -11,10 +11,10 @@ const Note = (props) => {
 
   useEffect(() => {
     // Effect to load notes when component mounts
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem("token")) {
       getNote(); // Fetching notes if user is authenticated
     } else {
-      navigate('/Login'); // Redirecting to login if user is not authenticated
+      navigate("/Login"); // Redirecting to login if user is not authenticated
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -163,7 +163,12 @@ const Note = (props) => {
       {notee.length === 0 && "There are no notes at this time"}
       <div className="row my-3">
         {notee.map((note) => (
-          <NoteItem key={note._id} updateNote={updateNote} note={note} />
+          <NoteItem
+            key={note._id}
+            updateNote={updateNote}
+            note={note}
+            showAlert={props.showAlert}
+          />
         ))}
       </div>
     </div>
